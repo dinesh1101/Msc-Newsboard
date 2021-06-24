@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import LoginForm from "./components/loginForm";
+import SignUpForm from "./components/register";
+import "bootstrap/dist/css/bootstrap.css";
+import { auth, createUserProfileDocument } from "./components/firebase";
+import Home from "./components/home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { currentUser: null };
+
+  unsubscribeAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot((snapShot) => {
+          this.setState(
+            {
+              currentUser: {
+                id: snapShot.id,
+                ...snapShot.data(),
+              },
+            },
+            () => console.log(this.state)
+          );
+        });
+      }
+      this.setState({ currentUser: userAuth });
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeAuth();
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <Home currentUser={this.state.currentUser} />
+        <Switch>
+          <Route path="/login" component={LoginForm} />
+          <Route path="/" component={SignUpForm} />
+        </Switch>
+      </React.Fragment>
+    );
+  }
 }
-
 export default App;
