@@ -30,7 +30,7 @@ class LoginForm extends Component {
     const { account } = this.state;
     return (
       <div className="container">
-        <h1>SignIn</h1>
+        <h4>I already have an account</h4>
 
         <form onSubmit={this.handleSubmit}>
           <Input
