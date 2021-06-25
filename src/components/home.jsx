@@ -13,7 +13,7 @@ const Home = ({ currentUser }) => {
         <Link to="/login">SignIn</Link>
       )}
       <p>/</p>
-      <Link to="/">Register</Link>
+      <Link to="/signup">Register</Link>
     </div>
   );
 };

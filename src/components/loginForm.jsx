@@ -13,6 +13,7 @@ class LoginForm extends Component {
 
     try {
       await auth.signInWithEmailAndPassword(username, password);
+      this.props.history.replace("/");
       this.setState({ account: { username: "", password: "" } });
     } catch (error) {
       console.error(error);
