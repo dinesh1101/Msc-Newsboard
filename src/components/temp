@@ -1,0 +1,25 @@
+<div>
+      <nav className="navbar navbar-light bg-light">
+        <div className="navbar-brand">
+          {currentUser ? (
+            <>
+              Logged in as {currentUser.name} &emsp;
+              <button
+                className="btn btn-danger"
+                onClick={() => auth.signOut()}
+                style={{ cursor: "pointer" }}
+              >
+                SignOut
+              </button>
+            </>
+          ) : (
+            <>
+              <pre>Logged out successfuly </pre>
+              <Link to="/login">
+                <button className="btn btn-success">SignIn</button>
+              </Link>
+            </>
+          )}
+        </div>
+      </nav>
+    </div>

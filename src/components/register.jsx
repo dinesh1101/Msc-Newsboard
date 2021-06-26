@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Input from "./input";
+import { Link } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./firebase";
 
 class SignUpForm extends Component {
@@ -41,8 +42,9 @@ class SignUpForm extends Component {
           confirmPassword: "",
         },
       });
+      this.props.history.replace("/");
     } catch (error) {
-      console.error(error);
+      console.error("in creating user", error);
     }
     console.log("Registered");
   };
@@ -50,7 +52,15 @@ class SignUpForm extends Component {
   render() {
     const { account } = this.state;
     return (
-      <div className="container">
+      <div
+        className="container"
+        style={{
+          width: "600px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "50px",
+        }}
+      >
         <h1>Register</h1>
 
         <form onSubmit={this.handleSubmit}>
@@ -84,7 +94,12 @@ class SignUpForm extends Component {
             type="password"
           />
 
-          <button className="btn btn-dark mr-5">Register</button>
+          <button className=" w-100 btn btn-dark mr-5">Register</button>
+          <h6 className="mt-4">
+            Already have an account?
+            <Link to="/login"> SignIn </Link>
+            here
+          </h6>
         </form>
       </div>
     );

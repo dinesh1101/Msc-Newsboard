@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Input from "./input";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import { auth, signInWithGoogle } from "./firebase";
 
 class LoginForm extends Component {
@@ -16,7 +18,7 @@ class LoginForm extends Component {
       this.props.history.replace("/");
       this.setState({ account: { username: "", password: "" } });
     } catch (error) {
-      console.error(error);
+      console.error("no email mode", error);
     }
 
     console.log("Signed IN");
@@ -30,10 +32,18 @@ class LoginForm extends Component {
   render() {
     const { account } = this.state;
     return (
-      <div className="container">
-        <h4>I already have an account</h4>
+      <div
+        className="container "
+        style={{
+          width: "500px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "100px",
+        }}
+      >
+        <h3>I already have an account</h3>
 
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <Input
             name="username"
             label="Username"
@@ -50,10 +60,24 @@ class LoginForm extends Component {
             type="password"
           />
 
-          <button className="btn btn-dark mr-5">Login</button>
-          <button className="btn btn-info" onClick={signInWithGoogle}>
-            Google SignIn
+          <button
+            className="btn btn-info mr-5"
+            type="submit"
+            onClick={this.handleSubmit}
+          >
+            Login
           </button>
+          <button
+            className="btn btn-outline-primary"
+            type="submit"
+            onClick={signInWithGoogle}
+          >
+            <FcGoogle size="23px" /> Google SignIn
+          </button>
+          <h6 className="mt-4">
+            New User? Click to
+            <Link to="/signup"> Register </Link>
+          </h6>
         </form>
       </div>
     );

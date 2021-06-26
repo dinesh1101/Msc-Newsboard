@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import LoginForm from "./components/loginForm";
 import SignUpForm from "./components/register";
 import "bootstrap/dist/css/bootstrap.css";
@@ -23,7 +23,7 @@ class App extends Component {
                 ...snapShot.data(),
               },
             },
-            () => console.log(this.state)
+            () => console.log("current user is", this.state.currentUser.name)
           );
         });
       }
@@ -38,11 +38,17 @@ class App extends Component {
     //const history = useHistory();
     return (
       <React.Fragment>
-        <Home currentUser={this.state.currentUser} />
+        {/* <Home currentUser={this.state.currentUser} /> */}
         <Switch>
           <Route path="/login" component={LoginForm} />
           <Route path="/signup" component={SignUpForm} />
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <Home currentUser={this.state.currentUser} {...props} />
+            )}
+          />
         </Switch>
       </React.Fragment>
     );

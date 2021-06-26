@@ -11,6 +11,7 @@ const Input = ({ name, type, label, value, handleChange }) => {
         type={type}
         name={name}
         id={name}
+        required
       />
     </div>
   );
