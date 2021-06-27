@@ -35,12 +35,10 @@ class App extends Component {
     this.unsubscribeAuth();
   }
   render() {
-    //const history = useHistory();
     return (
       <React.Fragment>
-        {/* <Home currentUser={this.state.currentUser} /> */}
         <Switch>
-          <Route path="/login" component={LoginForm} />
+          {/* <Route path="/login" component={LoginForm} />
           <Route path="/signup" component={SignUpForm} />
           <Route
             path="/"
@@ -48,7 +46,8 @@ class App extends Component {
             render={(props) => (
               <Home currentUser={this.state.currentUser} {...props} />
             )}
-          />
+          /> */}
+          <Home />
         </Switch>
       </React.Fragment>
     );

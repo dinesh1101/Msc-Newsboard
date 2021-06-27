@@ -1,0 +1,28 @@
+div.card {
+  display: flex;
+
+  width: 15rem;
+  height: 20rem;
+  background-color: lightyellow;
+  margin: 1rem 0 3rem 4rem;
+  box-shadow: 0 2px 6px 0;
+}
+
+div.elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.inner {
+  overflow: visible;
+  padding: 3px 3px;
+  background-color: lightyellow;
+  border: 2px solid gold;
+
+  transition: all 0.7s ease;
+}
+
+div.inner:hover {
+  transform: scale(1.5);
+}
