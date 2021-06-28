@@ -3,26 +3,50 @@ div.card {
 
   width: 15rem;
   height: 20rem;
-  background-color: lightyellow;
+  background-color: rgb(245, 245, 245);
   margin: 1rem 0 3rem 4rem;
   box-shadow: 0 2px 6px 0;
+  transition: all 0.1s ease-in;
+}
+div.card-footer {
+  transition: all 0.2s ease-in;
 }
 
 div.elements {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: rgb(228, 153, 79);
 }
 
-div.inner {
+/* div.inner {
   overflow: visible;
   padding: 3px 3px;
   background-color: lightyellow;
-  border: 2px solid gold;
-
-  transition: all 0.7s ease;
+  border: 1px solid black;
+} */
+div.card:hover {
+  transform: scale(1.0223);
+}
+div.card-footer:hover {
+  font-size: medium;
+  background-color: #2874f0;
+  color: white;
 }
 
-div.inner:hover {
-  transform: scale(1.5);
+div.name {
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  padding-top: 10px;
+}
+
+div.card-text {
+  font-style: oblique;
+  font-weight: 400;
+  padding-top: 1rem;
+  transition: all 0.1s ease-in;
+}
+div.card-text:hover {
+  transform: scale(1.18);
 }

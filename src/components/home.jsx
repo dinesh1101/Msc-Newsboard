@@ -1,66 +1,76 @@
 //import NavBar from "./navbar";
 import React from "react";
 import "../home.css";
-import { FcGoogle } from "react-icons/fc";
+import {
+  FcBusinessman,
+  FcCalculator,
+  FcReading,
+  FcDepartment,
+  FcGraduationCap,
+  FcHome,
+} from "react-icons/fc";
+import { FaMoneyCheck, FaPlus } from "react-icons/fa";
+
+import Cards from "./cards";
 
 const Home = ({ currentUser }) => {
   // return <NavBar currentUser={currentUser} />;
   return (
     <div className="elements">
-      <div className="card text-center ">
-        <div className="card-body">
-          <p className="card-title">
-            {" "}
-            <FcGoogle size="5rem " />
-            <br />
-            <span>Home</span>
-          </p>
-          <div className="card-text inner">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-            non!
-          </div>
-        </div>
-        <div className="card-footer bg-primary " type="submit">
-          Follow Link
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">2</h4>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">3</h4>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">4</h4>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">5</h4>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">6</h4>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">7</h4>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">8</h4>
-        </div>
-      </div>
+      <Cards
+        logo={FcHome}
+        name="AU HOME"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            non"
+        url="https://www.annauniv.edu/"
+      />
+      <Cards
+        logo={FaMoneyCheck}
+        name="AUKDC FEE"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            non"
+        url="https://www.aukdc.edu.in/onlinefee"
+      />
+      <Cards
+        logo={FcBusinessman}
+        name="ACOE"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            non"
+        url="https://acoe.annauniv.edu/"
+      />
+      <Cards
+        logo={FcDepartment}
+        name="CEG HOSTEL"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            non"
+        url="https://ceghostel.in/"
+      />
+      <Cards
+        logo={FcGraduationCap}
+        name="SEMS STUDENTS"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            non"
+        url="https://acoe.annauniv.edu/sems/login/student"
+      />
+      <Cards
+        logo={FcReading}
+        name="SYLLABUS IT/CS"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            non"
+        url=""
+      />
+      <Cards
+        logo={FcCalculator}
+        name="CGPA CALC"
+        text="Simplified calculator to know your CGPA/GPA for your academic purpose (credits-Rithick)"
+        url="https://rithick0907.github.io/cgpa-calculator/"
+      />
+      <Cards
+        logo={FaPlus}
+        name="~"
+        text="To be added"
+        url="https://duckduckgo.com/"
+      />
     </div>
   );
 };
