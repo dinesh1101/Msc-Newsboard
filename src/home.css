@@ -16,7 +16,8 @@ div.elements {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(228, 153, 79);
+  /* background-color: rgb(228, 153, 79); */
+  background-image: linear-gradient(to bottom right, darkviolet, #2874f0);
 }
 
 /* div.inner {
@@ -36,17 +37,18 @@ div.card-footer:hover {
 
 div.name {
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 700;
 
   padding-top: 10px;
 }
 
 div.card-text {
   font-style: oblique;
-  font-weight: 400;
+
   padding-top: 1rem;
   transition: all 0.1s ease-in;
 }
 div.card-text:hover {
-  transform: scale(1.18);
+  transform: scale(1.11);
+  font-weight: 500;
 }

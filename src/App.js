@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import LoginForm from "./components/loginForm";
 import SignUpForm from "./components/register";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { auth, createUserProfileDocument } from "./components/firebase";
 import Home from "./components/home";
 
