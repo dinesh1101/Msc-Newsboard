@@ -51,7 +51,6 @@ class LoginForm extends Component {
             handleChange={this.handleChange}
             type="email"
           />
-
           <Input
             name="password"
             label="Password"
@@ -59,16 +58,16 @@ class LoginForm extends Component {
             handleChange={this.handleChange}
             type="password"
           />
-
           <button
-            className="btn btn-info mr-5"
+            className="btn btn-info mr-3"
             type="submit"
             onClick={this.handleSubmit}
           >
             Login
           </button>
+          or
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-outline-primary ml-3"
             type="submit"
             onClick={signInWithGoogle}
           >

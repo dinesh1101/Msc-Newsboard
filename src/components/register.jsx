@@ -32,7 +32,7 @@ class SignUpForm extends Component {
         password
       );
 
-      await createUserProfileDocument(user, { name });
+      // await createUserProfileDocument(user, { name });
 
       this.setState({
         account: {

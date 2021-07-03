@@ -1,6 +1,5 @@
 div.card {
   display: flex;
-
   width: 15rem;
   height: 20rem;
   background-color: rgb(245, 245, 245);
@@ -8,8 +7,17 @@ div.card {
   box-shadow: 0 2px 6px 0;
   transition: all 0.1s ease-in;
 }
+div.card:hover {
+  transform: scale(1.0223);
+}
+
 div.card-footer {
   transition: all 0.2s ease-in;
+}
+div.card-footer:hover {
+  font-size: medium;
+  background-color: #2874f0;
+  color: white;
 }
 
 div.elements {
@@ -17,7 +25,7 @@ div.elements {
   flex-wrap: wrap;
   justify-content: center;
   /* background-color: rgb(228, 153, 79); */
-  background-image: linear-gradient(to bottom right, darkviolet, #2874f0);
+  background-image: linear-gradient(to bottom right, #fcb88b, #3a96f1);
 }
 
 /* div.inner {
@@ -26,29 +34,27 @@ div.elements {
   background-color: lightyellow;
   border: 1px solid black;
 } */
-div.card:hover {
-  transform: scale(1.0223);
-}
-div.card-footer:hover {
-  font-size: medium;
-  background-color: #2874f0;
-  color: white;
-}
 
 div.name {
   font-size: 1.3rem;
   font-weight: 700;
-
   padding-top: 10px;
 }
 
 div.card-text {
   font-style: oblique;
-
   padding-top: 1rem;
   transition: all 0.1s ease-in;
 }
-div.card-text:hover {
+div.card-text :hover {
   transform: scale(1.11);
   font-weight: 500;
+}
+
+div.dash-text {
+  margin-top: 3rem;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 600;
+  transition: all 3s ease-in;
 }

@@ -19,7 +19,7 @@ export default function ModalView({ sendDataToModal }) {
 
   return (
     <>
-      <Button variant="danger  w-100" onClick={handleShow}>
+      <Button variant="info  w-100" onClick={handleShow}>
         A D D ___ N E W S
       </Button>
 
@@ -59,8 +59,8 @@ export default function ModalView({ sendDataToModal }) {
           <Button
             variant="primary"
             onClick={() => {
-              sendDataToModal([newsContent], [cardValue]);
-              //sendValueToModal([cardValue]);
+              sendDataToModal(newsContent, cardValue);
+              //sendValueToModal(cardValue);
 
               handleClose();
             }}

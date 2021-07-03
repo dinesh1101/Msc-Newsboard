@@ -5,7 +5,7 @@ import SignUpForm from "./components/register";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { auth, createUserProfileDocument } from "./components/firebase";
+import { auth } from "./components/firebase";
 import Home from "./components/home";
 
 class App extends Component {
@@ -15,21 +15,22 @@ class App extends Component {
 
   componentDidMount() {
     this.unsubscribeAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot((snapShot) => {
-          this.setState(
-            {
-              currentUser: {
-                id: snapShot.id,
-                ...snapShot.data(),
-              },
-            },
-            () => console.log("current user is", this.state.currentUser.name)
-          );
-        });
-      }
+      // if (userAuth) {
+      //   const userRef = await createUserProfileDocument(userAuth);
+      //   userRef.onSnapshot((snapShot) => {
+      //     this.setState(
+      //       {
+      //         currentUser: {
+      //           id: snapShot.id,
+      //           ...snapShot.data(),
+      //         },
+      //       },
+      //       () => console.log("current user is", this.state.currentUser.name)
+      //     );
+      //   });
+      // }
       this.setState({ currentUser: userAuth });
+      // console.log(this.state.currentUser.email);
     });
   }
 
@@ -40,7 +41,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          {/* <Route path="/login" component={LoginForm} />
+          <Route path="/login" component={LoginForm} />
           <Route path="/signup" component={SignUpForm} />
           <Route
             path="/"
@@ -48,7 +49,7 @@ class App extends Component {
             render={(props) => (
               <Home currentUser={this.state.currentUser} {...props} />
             )}
-          /> */}
+          />
           <Home />
         </Switch>
       </React.Fragment>

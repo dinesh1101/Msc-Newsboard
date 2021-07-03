@@ -1,15 +1,16 @@
 import React from "react";
 import { auth } from "./firebase";
 import { Link } from "react-router-dom";
+import "../home.css";
 
 const NavBar = ({ currentUser }) => {
   return (
-    <nav className="navbar navbar-expand-sm bg-light">
+    <nav className="navbar navbar-expand-sm   ">
       <ul className="navbar-nav navbar-center">
         <li className="nav-item">
           {currentUser ? (
             <h6>
-              Welcome <b>{currentUser.name}</b>
+              Welcome <b>{currentUser.email}</b>
             </h6>
           ) : (
             <h5>SignIn to continue</h5>
@@ -19,19 +20,19 @@ const NavBar = ({ currentUser }) => {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <a className="nav-link" href="/#">
-            Link 1
+            Contact Us
           </a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/#">
-            Link 2
+            About Us
           </a>
         </li>
         <li className="nav-item navbar-brand">
           {currentUser ? (
             <div>
               <button
-                className="btn btn-danger ml-3"
+                className="btn btn-danger btn-sm ml-3"
                 onClick={() => auth.signOut()}
                 style={{ cursor: "pointer" }}
               >
@@ -41,7 +42,7 @@ const NavBar = ({ currentUser }) => {
           ) : (
             <>
               <Link to="/login">
-                <button className="btn btn-success ml-3">SignIn</button>
+                <button className="btn btn-success btn-sm ml-3">SignIn</button>
               </Link>
             </>
           )}
