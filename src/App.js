@@ -41,8 +41,6 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/login" component={LoginForm} />
-          <Route path="/signup" component={SignUpForm} />
           <Route
             path="/"
             exact
@@ -50,6 +48,9 @@ class App extends Component {
               <Home currentUser={this.state.currentUser} {...props} />
             )}
           />
+          <Route path="/login" component={LoginForm} />
+          <Route path="/signup" component={SignUpForm} />
+
           <Home />
         </Switch>
       </React.Fragment>

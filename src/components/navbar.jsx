@@ -5,7 +5,7 @@ import "../home.css";
 
 const NavBar = ({ currentUser }) => {
   return (
-    <nav className="navbar navbar-expand-sm   ">
+    <nav className="navbar navbar-expand-md   ">
       <ul className="navbar-nav navbar-center">
         <li className="nav-item">
           {currentUser ? (

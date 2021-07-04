@@ -14,11 +14,64 @@ import ModalView from "./modal";
 import Cards from "./cards";
 
 const Home = ({ currentUser }) => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(data);
-  }, [data]);
+  const [cards, setCards] = useState([
+    {
+      id: 1,
+      logo: FcHome,
+      name: "AU HOME",
+      text: "",
+      url: "https://www.annauniv.edu/",
+    },
+    {
+      id: 2,
+      logo: FaMoneyCheck,
+      name: "AUKDC FEE",
+      text: "",
+      url: "https://www.aukdc.edu.in/onlinefee/",
+    },
+    {
+      id: 3,
+      logo: FcBusinessman,
+      name: "ACOE",
+      text: "",
+      url: "https://acoe.annauniv.edu/",
+    },
+    {
+      id: 4,
+      logo: FcDepartment,
+      name: "CRG HOSTEL",
+      text: "",
+      url: "https://ceghostel.in/",
+    },
+    {
+      id: 5,
+      logo: FcGraduationCap,
+      name: "SEMS STUDENTS",
+      text: "",
+      url: "https://acoe.annauniv.edu/sems/login/student",
+    },
+    {
+      id: 6,
+      logo: FcReading,
+      name: "SYLLABUS IT/CS",
+      text: "",
+      url: "",
+    },
+    {
+      id: 7,
+      logo: FcCalculator,
+      name: "CGPA CLACI",
+      text: "",
+      url: "https://rithick0907.github.io/cgpa-calculator/",
+    },
+    {
+      id: 8,
+      logo: FaPlus,
+      name: "~",
+      text: "",
+      url: "https://www.annauniv.edu/",
+    },
+  ]);
 
   return (
     <>
@@ -27,18 +80,23 @@ const Home = ({ currentUser }) => {
         <>
           {" "}
           <ModalView
-            sendDataToModal={(e, cardno) => {
-              console.log(cardno, e);
-              let temp = [...data];
-
-              temp[cardno - 1] = e;
-
-              console.log(data);
-              setData(temp);
+            sendDataToModal={(textdata, cardno) => {
+              let temp = [...cards];
+              temp[cardno - 1].text = textdata;
+              setCards(temp);
             }}
           />
           <div className="elements">
-            <Cards
+            {cards.map((card) => (
+              <Cards
+                key={card.id}
+                logo={card.logo}
+                name={card.name}
+                text={card.text}
+                url={card.url}
+              />
+            ))}
+            {/* <Cards
               logo={FcHome}
               name="AU HOME"
               text={data[0]}
@@ -85,7 +143,7 @@ const Home = ({ currentUser }) => {
               name="~"
               text={data[7] && <div>{data[7]}</div>}
               url="https://duckduckgo.com/"
-            />
+            /> */}
           </div>
         </>
       ) : (
@@ -102,7 +160,6 @@ const Home = ({ currentUser }) => {
           </pre>
         </div>
       )}
-      {/* */}
     </>
   );
 };

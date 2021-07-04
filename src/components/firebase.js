@@ -41,6 +41,13 @@ export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ promt: "select_account" });
 
-export const signInWithGoogle = () => {
-  auth.signInWithPopup(provider);
+export const signInWithGoogle = async (history) => {
+  try {
+    const result = await auth.signInWithPopup(provider);
+    if (result.user.uid) {
+      history.push("/");
+    }
+  } catch (e) {
+    alert(e);
+  }
 };

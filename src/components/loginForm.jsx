@@ -69,7 +69,7 @@ class LoginForm extends Component {
           <button
             className="btn btn-outline-primary ml-3"
             type="submit"
-            onClick={signInWithGoogle}
+            onClick={() => signInWithGoogle(this.props.history)}
           >
             <FcGoogle size="23px" /> Google SignIn
           </button>

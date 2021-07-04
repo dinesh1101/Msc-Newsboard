@@ -25,7 +25,7 @@ div.elements {
   flex-wrap: wrap;
   justify-content: center;
   /* background-color: rgb(228, 153, 79); */
-  background-image: linear-gradient(to bottom right, #fcb88b, #3a96f1);
+  background-image: linear-gradient(to bottom right, #fcb88b, #143658);
 }
 
 /* div.inner {
@@ -44,11 +44,11 @@ div.name {
 div.card-text {
   font-style: oblique;
   padding-top: 1rem;
+  text-shadow: 1px 1px 1px #ababab;
   transition: all 0.1s ease-in;
 }
-div.card-text :hover {
-  transform: scale(1.11);
-  font-weight: 500;
+div.card-text:hover {
+  transform: scale(1.15);
 }
 
 div.dash-text {
@@ -58,3 +58,9 @@ div.dash-text {
   font-weight: 600;
   transition: all 3s ease-in;
 }
+
+@media (max-width: 493px) {
+  div.card {
+    margin-left: 0;
+  }
+} ;
