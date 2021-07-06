@@ -9,7 +9,7 @@ const Cards = (props) => {
   return (
     <div className="card text-center ">
       <div className="card-body " style={{ overflow: "auto" }}>
-        <div className="card-title">
+        <div className="card-title ">
           <props.logo size="4rem " />
           <br />
           <div className="name">{props.name}</div>

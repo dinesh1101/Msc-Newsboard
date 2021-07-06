@@ -4,11 +4,11 @@ div.card {
   height: 20rem;
   background-color: rgb(245, 245, 245);
   margin: 1rem 0 3rem 4rem;
-  box-shadow: 0 2px 6px 0;
-  transition: all 0.1s ease-in;
+  box-shadow: 0 3px 6px 0;
+  transition: all 0.1s ease-out;
 }
 div.card:hover {
-  transform: scale(1.0223);
+  transform: scale(1.0283);
 }
 
 div.card-footer {
@@ -44,11 +44,11 @@ div.name {
 div.card-text {
   font-style: oblique;
   padding-top: 1rem;
-  text-shadow: 1px 1px 1px #ababab;
+  font-weight: 400;
   transition: all 0.1s ease-in;
 }
 div.card-text:hover {
-  transform: scale(1.15);
+  transform: scale(1.11);
 }
 
 div.dash-text {
@@ -63,4 +63,4 @@ div.dash-text {
   div.card {
     margin-left: 0;
   }
-} ;
+}

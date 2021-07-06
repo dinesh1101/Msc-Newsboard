@@ -53,9 +53,9 @@ class SignUpForm extends Component {
     const { account } = this.state;
     return (
       <div
-        className="container"
+        className="container "
         style={{
-          width: "600px",
+          width: "500px",
           marginLeft: "auto",
           marginRight: "auto",
           marginTop: "50px",

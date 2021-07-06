@@ -33,7 +33,7 @@ export default function ModalView({ sendDataToModal }) {
             <Form.Control
               as="select"
               custom
-              style={{ backgroundColor: "#E7F8FD	" }}
+              style={{ backgroundColor: "#E7F8FD	", fontWeight: "bold" }}
               onClick={handleOptionChange}
             >
               <option value="1">AU HOME</option>

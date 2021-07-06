@@ -1,15 +1,14 @@
 import NavBar from "./navbar";
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "../home.css";
 import {
   FcBusinessman,
   FcCalculator,
-  FcReading,
   FcDepartment,
   FcGraduationCap,
   FcHome,
 } from "react-icons/fc";
-import { FaMoneyCheck, FaPlus } from "react-icons/fa";
+import { FaMoneyCheck, FaPlus, FaPeopleCarry } from "react-icons/fa";
 import ModalView from "./modal";
 import Cards from "./cards";
 
@@ -19,56 +18,56 @@ const Home = ({ currentUser }) => {
       id: 1,
       logo: FcHome,
       name: "AU HOME",
-      text: "",
+      text: "Please add the news you come to know",
       url: "https://www.annauniv.edu/",
     },
     {
       id: 2,
       logo: FaMoneyCheck,
       name: "AUKDC FEE",
-      text: "",
+      text: "Any fee circular seen by you? Update here",
       url: "https://www.aukdc.edu.in/onlinefee/",
     },
     {
       id: 3,
       logo: FcBusinessman,
       name: "ACOE",
-      text: "",
+      text: "Any official circular has been forwarded? Update here",
       url: "https://acoe.annauniv.edu/",
     },
     {
       id: 4,
       logo: FcDepartment,
-      name: "CRG HOSTEL",
-      text: "",
+      name: "CEG HOSTEL",
+      text: "Hostellers are requested to Submit your id card before vacating- all sem",
       url: "https://ceghostel.in/",
     },
     {
       id: 5,
       logo: FcGraduationCap,
       name: "SEMS STUDENTS",
-      text: "",
+      text: "Please check your Assessment Marks",
       url: "https://acoe.annauniv.edu/sems/login/student",
     },
     {
       id: 6,
-      logo: FcReading,
-      name: "SYLLABUS IT/CS",
-      text: "",
+      logo: FaPeopleCarry,
+      name: "Junior<->Senior",
+      text: "Hey juniors! Need volunteers for HR team - matrix //For   Contact-997465xxxx",
       url: "",
     },
     {
       id: 7,
       logo: FcCalculator,
       name: "CGPA CLACI",
-      text: "",
+      text: " A web application used to calculate GPA and CGPA  'Credits RITHICK B' ",
       url: "https://rithick0907.github.io/cgpa-calculator/",
     },
     {
       id: 8,
       logo: FaPlus,
       name: "~",
-      text: "",
+      text: "yet to be added  ",
       url: "https://www.annauniv.edu/",
     },
   ]);
@@ -78,7 +77,6 @@ const Home = ({ currentUser }) => {
       <NavBar currentUser={currentUser} />
       {currentUser ? (
         <>
-          {" "}
           <ModalView
             sendDataToModal={(textdata, cardno) => {
               let temp = [...cards];

@@ -1,54 +1,58 @@
-import React from "react";
 import { auth } from "./firebase";
 import { Link } from "react-router-dom";
+import { Nav, Navbar, Button, Badge } from "react-bootstrap";
 import "../home.css";
 
 const NavBar = ({ currentUser }) => {
+  // let name = currentUser.email.split("@");
+
   return (
-    <nav className="navbar navbar-expand-md   ">
-      <ul className="navbar-nav navbar-center">
-        <li className="nav-item">
-          {currentUser ? (
-            <h6>
-              Welcome <b>{currentUser.email}</b>
-            </h6>
-          ) : (
-            <h5>SignIn to continue</h5>
-          )}
-        </li>
-      </ul>
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          <a className="nav-link" href="/#">
-            Contact Us
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/#">
-            About Us
-          </a>
-        </li>
-        <li className="nav-item navbar-brand">
-          {currentUser ? (
-            <div>
-              <button
-                className="btn btn-danger btn-sm ml-3"
-                onClick={() => auth.signOut()}
-                style={{ cursor: "pointer" }}
-              >
-                SignOut
-              </button>
-            </div>
-          ) : (
-            <>
-              <Link to="/login">
-                <button className="btn btn-success btn-sm ml-3">SignIn</button>
-              </Link>
-            </>
-          )}
-        </li>
-      </ul>
-    </nav>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand>
+        {currentUser ? (
+          <h6>
+            Welcome{" "}
+            <span style={{ color: "#00cc00", fontStyle: "oblique" }}>
+              {currentUser.email.split("@", 1)}
+            </span>
+          </h6>
+        ) : (
+          <h5>SignIn to continue</h5>
+        )}
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <>
+          <Nav className="ml-auto" activeKey="/">
+            <Nav.Item as="li">
+              <Nav.Link href="#">About us</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link eventKey="link-1">Contact us</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              {currentUser ? (
+                <Button
+                  className="mt-1"
+                  variant="danger"
+                  size="sm"
+                  onClick={() => auth.signOut()}
+                  style={{ cursor: "pointer" }}
+                >
+                  SignOut
+                </Button>
+              ) : (
+                <Link to="/login">
+                  <Button variant="success" size="sm" className="mt-1">
+                    SignIn
+                  </Button>
+                </Link>
+              )}
+            </Nav.Item>
+          </Nav>
+        </>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
