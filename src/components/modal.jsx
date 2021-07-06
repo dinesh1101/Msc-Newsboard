@@ -31,6 +31,7 @@ export default function ModalView({ sendDataToModal }) {
           <Form.Group controlId="SelectCard">
             <Form.Label>Choose the card</Form.Label>
             <Form.Control
+              multiple
               as="select"
               custom
               style={{ backgroundColor: "#E7F8FD	", fontWeight: "bold" }}
