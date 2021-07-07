@@ -146,16 +146,7 @@ const Home = ({ currentUser }) => {
         </>
       ) : (
         <div className="elements vh-100">
-          <div className="dash-text">
-            ___N A M M A___M.Sc___D A S H B O A R D___
-          </div>
-          <pre
-            style={{
-              margin: "6rem 0 0 38rem",
-            }}
-          >
-            -Dinesh
-          </pre>
+          <div className="dash-text">M.Sc &nbsp; D A S H B O A R D</div>
         </div>
       )}
     </>

@@ -11,10 +11,14 @@ export default function ModalView({ sendDataToModal }) {
   };
 
   const handleOptionChange = (event) => {
+    event.preventDefault();
     setCardValue(event.target.value);
   };
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setNews(null);
+  };
   const handleShow = () => setShow(true);
 
   return (
@@ -31,10 +35,13 @@ export default function ModalView({ sendDataToModal }) {
           <Form.Group controlId="SelectCard">
             <Form.Label>Choose the card</Form.Label>
             <Form.Control
-              multiple
               as="select"
               custom
-              style={{ backgroundColor: "#E7F8FD	", fontWeight: "bold" }}
+              style={{
+                backgroundColor: "#E7F8FD	",
+                fontWeight: "bold",
+                marginBottom: "10px",
+              }}
               onClick={handleOptionChange}
             >
               <option value="1">AU HOME</option>
@@ -43,15 +50,20 @@ export default function ModalView({ sendDataToModal }) {
               <option value="4">CEG HOSTEL</option>
               <option value="5">SEMS</option>
             </Form.Control>
-          </Form.Group>
-          <InputGroup>
+            {/* <Form.Select aria-label="Default select example">
+              <option>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </Form.Select> */}
+
             <Form.Control
               as="textarea"
               rows={5}
               defaultValue={newsContent}
               onChange={handleChange}
             />
-          </InputGroup>
+          </Form.Group>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

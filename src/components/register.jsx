@@ -55,13 +55,13 @@ class SignUpForm extends Component {
       <div
         className="container "
         style={{
-          width: "500px",
+          width: "380px",
           marginLeft: "auto",
           marginRight: "auto",
           marginTop: "50px",
         }}
       >
-        <h1>Register</h1>
+        <h2>Sign Up</h2>
 
         <form onSubmit={this.handleSubmit}>
           <Input
@@ -94,7 +94,7 @@ class SignUpForm extends Component {
             type="password"
           />
 
-          <button className=" w-100 btn btn-dark mr-5">Register</button>
+          <button className=" w-100 btn btn-dark mr-5">Sign up</button>
           <h6 className="mt-4">
             Already have an account?
             <Link to="/login"> SignIn </Link>

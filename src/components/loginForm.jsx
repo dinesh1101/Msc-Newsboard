@@ -35,7 +35,7 @@ class LoginForm extends Component {
       <div
         className="container "
         style={{
-          width: "500px",
+          width: "  380px",
           marginLeft: "auto",
           marginRight: "auto",
           marginTop: "100px",
@@ -74,8 +74,8 @@ class LoginForm extends Component {
             <FcGoogle size="23px" /> Google SignIn
           </button>
           <h6 className="mt-4">
-            New User? Click to
-            <Link to="/signup"> Register </Link>
+            New User? &nbsp;
+            <Link to="/signup">Click here</Link> to Register
           </h6>
         </form>
       </div>

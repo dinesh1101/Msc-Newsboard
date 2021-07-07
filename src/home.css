@@ -53,10 +53,12 @@ div.card-text:hover {
 
 div.dash-text {
   margin-top: 3rem;
-  position: absolute;
-  font-size: 30px;
+
+  text-align: center;
+  font-size: 25px;
   font-weight: 600;
   transition: all 3s ease-in;
+  width: 100%;
 }
 
 @media (max-width: 493px) {
