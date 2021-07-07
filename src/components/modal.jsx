@@ -42,7 +42,7 @@ export default function ModalView({ sendDataToModal }) {
                 fontWeight: "bold",
                 marginBottom: "10px",
               }}
-              onClick={handleOptionChange}
+              onChange={handleOptionChange}
             >
               <option value="1">AU HOME</option>
               <option value="2">AUKDC FEE</option>
