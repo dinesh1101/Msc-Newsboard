@@ -32,21 +32,14 @@ class LoginForm extends Component {
   render() {
     const { account } = this.state;
     return (
-      <div
-        className="container "
-        style={{
-          width: "  380px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: "100px",
-        }}
-      >
+      <div className="container loreg ">
         <h3>I already have an account</h3>
 
         <form>
           <Input
             name="username"
-            label="Username"
+            label="Email"
+            placeholder="adress@example.com"
             value={account.username}
             handleChange={this.handleChange}
             type="email"
@@ -54,6 +47,7 @@ class LoginForm extends Component {
           <Input
             name="password"
             label="Password"
+            placeholder="Password"
             value={account.password}
             handleChange={this.handleChange}
             type="password"
@@ -74,7 +68,7 @@ class LoginForm extends Component {
             <FcGoogle size="23px" /> Google SignIn
           </button>
           <h6 className="mt-4">
-            New User? &nbsp;
+            New User?
             <Link to="/signup">Click here</Link> to Register
           </h6>
         </form>

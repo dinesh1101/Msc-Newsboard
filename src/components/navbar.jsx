@@ -7,14 +7,15 @@ const NavBar = ({ currentUser }) => {
   // let name = currentUser.email.split("@");
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar variant="dark" bg="dark" expand="lg">
       <Navbar.Brand>
         {currentUser ? (
           <h6>
-            Welcome{" "}
-            <span style={{ color: "#00cc00", fontStyle: "oblique" }}>
+            Welcome &nbsp;
+            <span style={{ color: "#fcb88b", fontStyle: "oblique" }}>
               {currentUser.email.split("@", 1)}
             </span>
+            &nbsp; 🙏
           </h6>
         ) : (
           <h5>SignIn to continue</h5>

@@ -9,6 +9,7 @@ div.card {
 }
 div.card:hover {
   transform: scale(1.0283);
+  border: 2px solid #2874f0;
 }
 
 div.card-footer {
@@ -24,6 +25,8 @@ div.elements {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+
   /* background-color: rgb(228, 153, 79); */
   background-image: linear-gradient(to bottom right, #fcb88b, #143658);
 }
@@ -61,8 +64,22 @@ div.dash-text {
   width: 100%;
 }
 
-@media (max-width: 493px) {
+@media (max-width: 481px) {
   div.card {
     margin-left: 0;
   }
+}
+
+div.loreg {
+  width: 400px;
+  margin: 100px auto 0 auto;
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 5px 7px 0.5px #aaaaaa;
+  border: 1px solid #bfbfbf;
+}
+
+Button.modal-btn {
+  background-color: #8326f6;
+  font-weight: 700;
 }

@@ -53,7 +53,7 @@ class SignUpForm extends Component {
     const { account } = this.state;
     return (
       <div
-        className="container "
+        className="container loreg "
         style={{
           width: "380px",
           marginLeft: "auto",
@@ -65,15 +65,9 @@ class SignUpForm extends Component {
 
         <form onSubmit={this.handleSubmit}>
           <Input
-            name="name"
-            label="Name"
-            value={account.name}
-            handleChange={this.handleChange}
-            type="text"
-          />
-          <Input
             name="username"
             label="Username"
+            placeholder="Address@example.com"
             value={account.username}
             handleChange={this.handleChange}
             type="email"
@@ -82,6 +76,7 @@ class SignUpForm extends Component {
           <Input
             name="password"
             label="Password"
+            placeholder="Enter new password"
             value={account.password}
             handleChange={this.handleChange}
             type="password"
@@ -89,6 +84,7 @@ class SignUpForm extends Component {
           <Input
             name="confirmPassword"
             label="Confirm Password"
+            placeholder="Re-type password"
             value={account.confirmPassword}
             handleChange={this.handleChange}
             type="password"
@@ -97,7 +93,7 @@ class SignUpForm extends Component {
           <button className=" w-100 btn btn-dark mr-5">Sign up</button>
           <h6 className="mt-4">
             Already have an account?
-            <Link to="/login"> SignIn </Link>
+            <Link to="/login"> Sign in </Link>
             here
           </h6>
         </form>

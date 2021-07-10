@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-import { Button, Modal, Form, InputGroup } from "react-bootstrap";
+import { Button, Modal, Form } from "react-bootstrap";
+import firebase from "./firebase";
 
 export default function ModalView({ sendDataToModal }) {
   const [show, setShow] = useState(false);
@@ -11,7 +12,6 @@ export default function ModalView({ sendDataToModal }) {
   };
 
   const handleOptionChange = (event) => {
-    event.preventDefault();
     setCardValue(event.target.value);
   };
 
@@ -21,15 +21,26 @@ export default function ModalView({ sendDataToModal }) {
   };
   const handleShow = () => setShow(true);
 
+  const handleUser = () => {
+    const store = firebase.database().ref("/CardNews/" + cardValue);
+    let data = {
+      News: newsContent,
+      Cardid: cardValue,
+    };
+    store.set(data);
+  };
+
   return (
     <>
-      <Button variant="info  w-100" onClick={handleShow}>
-        A D D ___ N E W S
+      <Button className="mt-3 modal-btn" onClick={handleShow}>
+        + ADD NEWS
       </Button>
 
       <Modal show={show} onHide={handleClose} backdrop="static">
         <Modal.Header closeButton>
-          <Modal.Title as="h3">Update News</Modal.Title>
+          <Modal.Title as="h5">
+            Add the circular/news to respective cards{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group controlId="SelectCard">
@@ -43,12 +54,15 @@ export default function ModalView({ sendDataToModal }) {
                 marginBottom: "10px",
               }}
               onChange={handleOptionChange}
+              onClick={handleOptionChange}
             >
+              <option value="">----select----</option>
               <option value="1">AU HOME</option>
               <option value="2">AUKDC FEE</option>
               <option value="3">ACOE</option>
               <option value="4">CEG HOSTEL</option>
               <option value="5">SEMS</option>
+              <option value="6">JUNIOR-SENIOR</option>
             </Form.Control>
             {/* <Form.Select aria-label="Default select example">
               <option>Open this select menu</option>
@@ -72,7 +86,8 @@ export default function ModalView({ sendDataToModal }) {
           <Button
             variant="primary"
             onClick={() => {
-              sendDataToModal(newsContent, cardValue);
+              handleUser();
+              sendDataToModal(cardValue);
               //sendValueToModal(cardValue);
 
               handleClose();
