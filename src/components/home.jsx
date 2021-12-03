@@ -1,7 +1,6 @@
-import NavBar from "./navbar";
-import firebase from "./firebase";
-import { React, useState, useEffect, useCallback } from "react";
 import "../home.css";
+
+import { FaMoneyCheck, FaPeopleCarry, FaPlus } from "react-icons/fa";
 import {
   FcBusinessman,
   FcCalculator,
@@ -9,9 +8,12 @@ import {
   FcGraduationCap,
   FcHome,
 } from "react-icons/fc";
-import { FaMoneyCheck, FaPlus, FaPeopleCarry } from "react-icons/fa";
-import ModalView from "./modal";
+import { React, useCallback, useEffect, useState } from "react";
+
 import Cards from "./cards";
+import ModalView from "./modal";
+import NavBar from "./navbar";
+import firebase from "./firebase";
 
 const Home = ({ currentUser }) => {
   const [news, setNews] = useState([]);
@@ -62,7 +64,7 @@ const Home = ({ currentUser }) => {
     {
       id: 7,
       logo: FcCalculator,
-      name: "CGPA CLACI",
+      name: "CGPA Calculator",
       text: " A web application used to calculate GPA and CGPA  'Credits RITHICK B' ",
       url: "https://rithick0907.github.io/cgpa-calculator/",
     },
@@ -109,14 +111,12 @@ const Home = ({ currentUser }) => {
   return (
     <>
       <NavBar currentUser={currentUser} />
-
-      {currentUser ? (
         <div className="elements ">
           <ModalView
+          currentUser={currentUser}
             sendDataToModal={(cardno) => {
               let temp = [...cards];
               temp[cardno - 1].text = news[cardno - 1].News;
-
               setCards(temp);
             }}
           />
@@ -132,11 +132,6 @@ const Home = ({ currentUser }) => {
             ))}
           </div>
         </div>
-      ) : (
-        <div>
-          <div className="dash-text">M.Sc &nbsp; D A S H B O A R D</div>
-        </div>
-      )}
     </>
   );
 };

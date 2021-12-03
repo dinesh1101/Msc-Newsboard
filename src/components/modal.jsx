@@ -1,8 +1,10 @@
+import { Button, Form, Modal } from "react-bootstrap";
 import { React, useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
-import firebase from "./firebase";
 
-export default function ModalView({ sendDataToModal }) {
+import firebase from "./firebase";
+import { toast } from "react-toastify";
+
+export default function ModalView({ sendDataToModal,currentUser }) {
   const [show, setShow] = useState(false);
   const [newsContent, setNews] = useState(null);
   const [cardValue, setCardValue] = useState(null);
@@ -19,7 +21,10 @@ export default function ModalView({ sendDataToModal }) {
     setShow(false);
     setNews(null);
   };
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    if(currentUser != null)  setShow(true);
+    else toast("Login to continue");
+  }
 
   const handleUser = () => {
     const store = firebase.database().ref("/CardNews/" + cardValue);

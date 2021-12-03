@@ -1,13 +1,15 @@
-import { auth } from "./firebase";
-import { Link } from "react-router-dom";
-import { Nav, Navbar, Button, Badge } from "react-bootstrap";
 import "../home.css";
+
+import { Badge, Button, Nav, Navbar } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
+import { auth } from "./firebase";
 
 const NavBar = ({ currentUser }) => {
   // let name = currentUser.email.split("@");
 
   return (
-    <Navbar variant="dark" bg="dark" expand="lg">
+    <Navbar variant="light" bg="light" expand="lg">
       <Navbar.Brand>
         {currentUser ? (
           <h6>
@@ -18,7 +20,7 @@ const NavBar = ({ currentUser }) => {
             &nbsp; 🙏
           </h6>
         ) : (
-          <h5>SignIn to continue</h5>
+          <h5 style={{cursor:"pointer"}}>News Dashboard</h5>
         )}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
