@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# M.Sc Newsboard
+This is a Web Application that provides the latest news for my department students and one can convey circular/news to all batch students by adding news in it.
+Tech Stack: React JS, React-Boostrap, Firebase.  
+Visit this application at [https://newsboard-msc.netlify.app/#/](https://newsboard-msc.netlify.app/#/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup and run the app
 
-## Available Scripts
+Follow these steps to setup and run the quickstart:
 
-In the project directory, you can run:
+ 1. Create a Firebase project in the [Firebase Console](https://console.firebase.google.com).
+ 2.  In the Firebase console, enable Anonymous authentication on your project by doing: Authentication > SIGN-IN METHOD > Anonymous > Enable > SAVE
+ 3. In the Firebase console, enable Firestore on your project by clicking Create Database in the Cloud Firestore section of the console and answering all prompts.
+     1. Select testing mode for the security rules
+ 4. Clone/Download this repo and open this folder in a Terminal.
+ 5. Install the Firebase CLI if you do not have it installed on your machine:
+    
+bash
+    npm -g i firebase-tools
+    
+ 1. Set the CLI to use the project you created on step 1:
+    
+bash
+    firebase use --add
+    
+ 1. Deploy the Firestore security rules and indexes:
+    
+bash
+    firebase deploy --only firestore
+    
+ 1. Run a local server:
+    
+bash
+    firebase serve
+    
+ 1. As indicated, open [http://localhost:5000](http://localhost:5000) in your browser and try out the app.
+ 
+ ## How to use this app
+ 1.Initially register your account using Email or google account.
+ 2.View the news under each category.
+ 3.If you are the one with a new circular, click Add News button
+ 4.Choose the category you need to display news
+ 5.By adding so, it will be displayed in that news category
+ 
+## How the app look like
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ (screenshots will be uploaded soon)
